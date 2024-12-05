@@ -1,0 +1,437 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page LogoCheckr</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ebded4;
+        }
+        /* ............................ */
+
+        .logo img {
+        max-width: 100%; /* Ensures the logo is responsive */
+        height: auto;    /* Maintains aspect ratio */
+        margin: 0;
+        padding: 0;
+        }
+
+        /* ............................ */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #745e59;
+        }
+        
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            text-decoration: none; 
+            color: black;
+            margin: 15px;
+            font-weight: bold;
+        }
+
+        /* ............................ */
+        
+        .coverpage {
+            
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+            background-color: #745e59;
+;
+        }
+
+
+        /* ............................ */
+        
+        .featured {
+            text-align: center;
+            padding: 20px 0;
+            background-color:  #ebded4;
+;
+        }
+
+        .featured h2 {
+            margin: 0;
+            font-size: 2em;
+            color: black;
+        }
+        
+        /* ............................ */
+
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:  #ebded4;
+;
+            padding: 50px 0;
+        }
+
+        .hero img {
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: absolute;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: black;
+            margin-top: -40px;
+        }
+
+        .menu-bar {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+      
+        .menu-item {
+            
+            position: relative;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+      
+
+      
+        .menu-item:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1;
+            min-width: 150px;
+        }
+
+        .dropdown-content div {
+            padding: 8px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .dropdown-content div:hover {
+            background-color: #ddd;
+        }
+        .coverpage {
+            background-color: #ebded4;
+        text-align: center;
+        padding: 20px;  /* Adjust this value to control the padding */
+        margin: 20px auto;  /* Center and adjust margin as needed */
+        }
+
+        .coverpage img {
+            background-color: #ebded4;
+            max-width: 100%;  /* Ensures the image is responsive */
+            height: auto;     /* Maintains aspect ratio */
+            width: 80%;       /* Set a specific width (e.g., 80% of the container) */
+        }
+
+
+
+
+.footer {
+    background-color: #745e59;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    color: #ebded4; /* This will change all text color to white by default */
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    color: #ebded4;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ebded4; /* Change link color to white */
+}
+
+.footer-section p {
+    color: #ebded4; /* Change paragraph text to white */
+    margin-bottom: 10px;
+}
+
+.footer-section input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.footer-section button {
+    padding: 10px;
+    width: 100%;
+    background-color: #ebded4;
+    color: #745e59;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-section button:hover {
+    background-color: #ebded4;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 50px;   /* Adjust the size of the icons */
+    height: 50px;  /* Maintain square ratio */
+    transition: transform 0.3s ease;
+    fill: #ebded4;   /* Ensure the icons are white */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+        .upload {
+            display: flex;               
+            justify-content: center;     
+            align-items: center;         
+            background-color: #ebded4;
+            padding: 20px;               
+            margin: 0 auto;              
+        }
+        
+        
+        .uploadbutton {
+            background-color:  #745e59;
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            height : auto;
+            width: auto;
+            border-radius: 5px;          
+            margin-top: 20px;           
+        }
+    
+
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="navbar">
+                  
+        <div class="logo">
+            <img src='{%static 'Final_logo.png'%}' alt="LogoCheckr" /> 
+        
+        </div>
+        <div class="menu">               
+            <a href="http://localhost:8000/home"><b>Home</b></a>
+            <ul class="menu-bar">
+                <li class="menu-item">Brands
+                    <div class="dropdown-content">
+                        <a href="http://localhost:8000/upload">PUMA</a><br>
+                        <a href="http://localhost:8000/upload">NIKE</a><br>
+                        <a href="http://localhost:8000/upload">SKETCHERS</a><br>
+                        <a href="http://localhost:8000/upload">CAMPUS</a><br>
+                        <a href="http://localhost:8000/upload">BATA</a><br>
+                        <a href="http://localhost:8000/upload">ADIDAS</a><br>
+                        <a href="http://localhost:8000/upload">WOODLAND</a><br>
+                        <a href="http://localhost:8000/upload">ASICS</a><br>
+                        <a href="http://localhost:8000/upload">REEBOK</a><br>
+                    </div>
+                </li>
+            </ul>
+            <a href="http://localhost:8000/contactus"><b>Contact Us</b></a>            
+            <a href="http://localhost:8000/aboutus"><b>About Us</b></a>          
+        </div>
+    </div>
+    </div>
+
+    <!--.................... -->
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>"WE AWARE,WE DETECT"</h1>
+            <p></p>
+        </div>
+    </div>
+    
+    <!--.................... -->
+
+    <div class="featured">
+        <h2>Upload logo Here!</h2>
+    </div>
+
+    <!--.................... -->
+    {% comment %} <div class="upload">
+    <div class="uploadbutton">
+        <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+            <input type="submit">
+            </form>
+    <!-- <button type="submit">Upload</button> -->
+    </div>
+</div> {% endcomment %}
+<div class="upload">
+    <div class="uploadbutton">
+        {% comment %} <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }}
+        {% comment %} <form action="/action_page.php">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit">
+        </form> {% endcomment %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+    <!-- <button type="submit">Upload</button> -->
+    </div>
+</div>
+
+    <!--.................... -->
+
+ 
+
+    <div class="coverpage" style="text-align: center;">
+        <img src="{%static 'cover_page.png'%}" alt="coverpage">
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-section">
+            <h2>You can Detect Logo :</h2>
+            <ul>
+                <li><a href="http://localhost:8000/upload">Puma</a></li>
+                <li><a href="http://localhost:8000/upload">Nike</a></li>
+                <li><a href="http://localhost:8000/upload">Sketchers</a></li>
+                <li><a href="http://localhost:8000/upload">Campus</a></li>
+                <li><a href="http://localhost:8000/upload">Bata</a></li>
+                <li><a href="http://localhost:8000/upload">Adidas</a></li>
+                <li><a href="http://localhost:8000/upload">Woodland</a></li>
+                <li><a href="http://localhost:8000/upload">Acics</a></li>
+                <li><a href="http://localhost:8000/upload">Reebok</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h2>Company Info :</h2>
+            <ul>
+                
+                <li><a href="http://localhost:8000/contactus">Contact Us</a></li>
+                <li><a href="http://localhost:8000/aboutus">About Us</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h2>Privacy Policies :</h2>
+            <ul>
+                <li><a href="http://localhost:8000/terms">Terms & Conditions</a></li>
+                <li><a href="http://localhost:8000/terms">Privacy & Cookies Policy</a></li>
+               
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h2>Get In Touch :</h2>
+            <p>For Any Inquiry / Complain:</p> 
+            <p>info.logocheckr@gmail.com</p>
+            </div>
+
+        <div class="footer-section">
+            <h2 color: white;>Social Media :</h2>
+    
+
+            <div class="social-icons">
+                <a href="{%static 'email_icon.png'%}" class="social-icon email">
+                    <img src="{%static 'email_icon.png'%}" alt="Email Icon" class="social-icon">
+                </a>
+                <a href="{%static 'Facebook_icon.png'%}" class="social-icon facebook">
+                    <img src="{%static 'Facebook_icon.png'%}" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="{%static 'instagram_icon.png'%}" class="social-icon instagram">
+                    <img src="{%static 'instagram_icon.png'%}" alt="Instagram Icon" class="social-icon">
+                </a>
+                <a href="{%static 'youtube_icon.png'%}" class="social-icon youtube">
+                    <img src="{%static 'youtube_icon.png'%}" alt="Youtube Icon" class="social-icon">
+                </a>
+            </div>
+
+        
+
+        </div>
+        
+    </footer>
+
+    <div class="Copyright" style="text-align: center; color: #000;">
+        <h4><!--&copy;--> Copyright @ 2024 LogoCheckr. All rights reserved.</h4>
+    </div>
+    
+
+
+</body>
+</html>
